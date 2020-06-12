@@ -1,0 +1,14 @@
+class node
+{
+public:
+int data;
+Node *next;
+};
+void push (Node** head_ref,new_data)
+{
+Node* new_node = new Node();
+new_node -> data = new_data;
+(
+(*head_ref)=new_node;
+}
+
