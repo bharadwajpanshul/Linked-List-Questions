@@ -1,0 +1,16 @@
+it is a linear collection of data. it is like arrays. it is a linear collection of nodes pointing to next nodes by
+using the pointer.
+each node has 2 parts: 
+1. data
+2. next/link
+next/link  contains the address of next node in the list
+and data stores the information of the element
+when the exact numbers arent known to us then we use the linked list
+So we will see an example now 
+once a teacher in a school took students for a movie, she called the theatre and told to book 30 seats 
+the theatre person booked 30 seats respectively so the students went and she had to go out 
+urgently so she counted the student and note the row and seat number and counted 30 students.
+and takes her students back to scholol.
+another week she eawnted to take them for another movie so she asked the theatre master he said that scattered seats are available but not continuos 30 seats are there. and agian she has to go to meet someone out so she made sit them scattered and
+so she asked the students to write the seat number of another next student in his note which helped her to connect to every of those 30 students.
+this is linked list.
