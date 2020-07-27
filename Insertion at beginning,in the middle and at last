@@ -1,0 +1,78 @@
+#include <iostream>
+#include <bits/stdc++.h> 
+using namespace std;
+
+
+class Node 
+{ 
+    public: 
+    int data; 
+    Node *next; 
+};
+
+
+void begin(int new_data, Node** head_ref)
+{
+Node* new_node = new Node();
+new_node->data = new_data;
+new_node->next = (*head_ref);
+(*head_ref) = new_node;
+
+}
+
+
+void addatmiddle(int new_data, Node* previous_node)
+{
+	Node* new_node = new Node();
+	new_node->data = new_data;
+	new_node->next = previous_node->next;
+	previous_node->next= new_node;
+}
+
+
+void addatlast(int new_data,Node** head_ref)
+{
+	Node* new_node = new Node();
+	Node *last = *head_ref;
+	new_node->data=new_data;
+	new_node->next=NULL;
+	if(*head_ref==NULL)
+	{
+		*head_ref =new_node;
+	    return;
+	}
+	while(last->next!=NULL)
+	{
+	last=last->next;	
+	}
+	last->next = new_node;  
+    return;  
+    
+}
+
+
+void printList(Node *n)
+{
+	while(n!=NULL)
+	{
+		cout<< n->data << " ";
+		n=n->next;
+	}
+}
+
+
+int main()  
+{  
+    Node* head = NULL;  
+    addatlast(6,&head);  
+    begin(7, &head);  
+    begin(1, &head);  
+    addatlast(4, &head);
+    addatlast(9, &head);
+    begin(2, &head);
+      
+    cout<<"Created Linked list is: ";  
+    printList(head);  
+      
+    return 0;  
+}
