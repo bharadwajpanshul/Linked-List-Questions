@@ -1,0 +1,57 @@
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+class Node
+{
+	public:
+	int data;
+	Node *next;
+};
+void push(int new_data,Node** head_ref)
+{
+ Node *new_node = new Node();
+ new_node->data = new_data;
+ new_node->next = (*head_ref);
+ (*head_ref) = new_node;
+}
+void deletion(int key,Node **head_ref)
+{
+Node *temp = *head_ref,*prev;
+if(temp!=NULL && temp->data==key)
+{
+	*head_ref=temp->next;
+	free(temp);
+	return;
+}
+while(temp!=NULL && temp->data!=key)
+{
+	prev=temp;
+	temp=temp->next;
+}
+if(temp == NULL)
+{
+	return;
+}
+prev->next = temp->next;
+free(temp);
+}
+void printlist(Node *n)
+{
+	while(n!=NULL) {
+	cout<<n->data<<" ";
+	n=n->next; }
+}
+int main()
+{
+	Node* head = NULL; 
+  
+	push(8, &head);
+	push(7, &head);
+	push(2, &head);
+	push(1, &head);
+    printlist(head); 
+    deletion(7, &head); 
+    cout<<"\n";
+    printlist(head); 
+    return 0; 
+}
