@@ -35,10 +35,10 @@ int main()
 {  
     Node* head = NULL;  
     push(&head, 1);  
-    push(&head, 4);  
+    push(&head, 2);  
+    push(&head, 5);  
+    push(&head, 7);  
     push(&head, 1);  
-    push(&head, 12);  
-    push(&head, 1);  
-    cout << "Element at index 3 is " << GetNth(head, 3);  
+    cout << "Element at the index 4 is " << GetNth(head, 4);  
     return 0; 
 }  
